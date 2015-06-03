@@ -1,0 +1,61 @@
+
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+class Ship {
+public:
+    Ship();
+private:
+    int health;
+    int lives;
+    int velocity;
+    int posX;
+    int posY;
+};
+
+class Asteroid {
+public:
+    Asteroid();
+    void setCoord();
+    void getPosX();
+    void getPosY();
+
+private:
+    int velocity;
+    int posX;
+    int posY;
+};
+
+
+int main(int argc, char** argv) {
+    Ship myShip;
+    Asteroid A;
+    
+    A.setCoord();
+    
+    return 0;
+}
+
+
+Ship :: Ship() :
+        health(100), lives(3), velocity(0), posX(0), posY(0){
+}
+
+Asteroid :: Asteroid() :
+        velocity(5), posX(0), posY(0){
+}
+
+void Asteroid::setCoord(){
+    posX = rand() % 80 + 1;
+    posY = rand() % 80 + 1;
+}
+
+void Asteroid :: getPosX() {
+    return posX;
+}
+
+void Asteroid :: getPosY() {
+    return posY;
+}
